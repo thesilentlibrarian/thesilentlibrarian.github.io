@@ -1,15 +1,15 @@
 ---
 title: "ROX Refine Simulator"
 date: 2021-07-28T15:32:21+08:00
-draft: true
+draft: false
 ---
 
 ## Summary
 
 This page contains the refinement simulator for Ragnarok X.
-In this game, refining an equipment has variable chance to upgrade, failed, damaged, and even downgrade.
-This simulator helps conducting a controlled experiment on this refinement mechanism, producing a report
-that may be valuable for making refinement decision inside the game.
+In this game, refining equipment has a variable chance to upgrade, failed, damage, and even downgrade.
+This simulator helps conduct a controlled experiment on this refinement mechanism,
+producing a report that may or may not be valuable for making refinement decisions inside the game.
 
 
 ## Simulator
@@ -105,11 +105,11 @@ Then click the "Run Simulation" button.
           During the simulation, 50% of the experiment reach the target level after <b class="text-p50">X</b> refinements.
         </li>
         <li>
-          If you have tendency with slighly bad luck, you can see the <code>p75</code>.
+          If you have a tendency with slightly bad luck, you can see the <code>p75</code>.
           During the simulation, 75% of the experiment reach the target level after <b class="text-p75">X</b> refinements.
         </li>
         <li>
-          If you are pessimistic with your super horrible bad luck, you can see the <code>p95</code>.
+          If you are pessimistic and have super horrible bad luck, you can see the <code>p95</code>.
           During the simulation, 75% of the experiment reach the target level after <b class="text-p95">X</b> refinements.
         </li>
       </ul>

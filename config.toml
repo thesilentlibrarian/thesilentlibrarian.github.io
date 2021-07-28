@@ -62,12 +62,6 @@ copyright = "© {year}"
   url = "/"
 
 [[menu.main]]
-  identifier = "blog"
-  name = "blog"
-  title = "Blog"
-  url = "/blog"
-
-[[menu.main]]
   identifier = "rox-refine-simulator"
   name = "rox refine simulator"
   title = "ROX Refine Simulator"
