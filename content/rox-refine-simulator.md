@@ -1,5 +1,5 @@
 ---
-title: "ROX Refine Simulator"
+title: "ROX Repeated Refine Simulator"
 date: 2021-07-28T15:32:21+08:00
 draft: false
 ---
@@ -11,6 +11,7 @@ In this game, refining equipment has a variable chance to upgrade, failed, damag
 This simulator helps conduct a controlled experiment on this refinement mechanism,
 producing a report that may or may not be valuable for making refinement decisions inside the game.
 
+For step-by-step refinement simulator, click [here](/rox-refine-step-simulator).
 
 ## Simulator
 
@@ -97,9 +98,6 @@ Then click the "Run Simulation" button.
       <h4>How many times should you refine to reach the target level?</h4>
       <p>From the simulation, we can conclude the following statements:</p>
       <ul>
-        <li>
-          Most of the experiment need <b class="text-mode">X</b> refinements to reach the target level. (see <code>mode</code>)
-        </li>
         <li>
           If you are the average guy with normal luck, you can see the <code>p50</code>.
           During the simulation, 50% of the experiment reach the target level after <b class="text-p50">X</b> refinements.

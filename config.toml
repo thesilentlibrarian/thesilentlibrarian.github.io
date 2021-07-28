@@ -63,6 +63,12 @@ copyright = "© {year}"
 
 [[menu.main]]
   identifier = "rox-refine-simulator"
-  name = "rox refine simulator"
-  title = "ROX Refine Simulator"
+  name = "rox repeated refine simulator"
+  title = "ROX Repeated Refine Simulator"
   url = "/rox-refine-simulator"
+
+[[menu.main]]
+  identifier = "rox-step-refine-simulator"
+  name = "rox step refine simulator"
+  title = "ROX Step Refine Simulator"
+  url = "/rox-refine-step-simulator"
