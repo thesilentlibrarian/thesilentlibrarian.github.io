@@ -1,0 +1,165 @@
+<!doctype html><html lang=en-us>
+<head>
+<title>ROX Refine Simulator | The Silent Librarian</title>
+<meta charset=utf-8>
+<meta name=language content="en">
+<meta name=description content>
+<meta name=keywords content>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<link rel="shortcut icon" type=image/png href=/favicon.ico>
+<link type=text/css rel=stylesheet href=/css/post.min.86d1effd4c412b85ac13db53a90c473a0f256f789b821e131125c9aa25cb6a6d.css integrity="sha256-htHv/UxBK4WsE9tTqQxHOg8lb3ibgh4TESXJqiXLam0=">
+<link type=text/css rel=stylesheet href=/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","url":"https:\/\/thesilentlibrarian.github.io\/rox-refine-simulator\/","name":"ROX Refine Simulator","author":{"@type":"Person","name":""},"description":""}</script>
+</head>
+<body>
+<div class=burger__container>
+<div class=burger aria-controls=navigation aria-label=Menu>
+<div class="burger__meat burger__meat--1"></div>
+<div class="burger__meat burger__meat--2"></div>
+<div class="burger__meat burger__meat--3"></div>
+</div>
+</div>
+<nav class=nav id=navigation>
+<ul class=nav__list>
+<li>
+<a href=/>about</a>
+</li>
+<li>
+<a href=/rox-refine-simulator>rox refine simulator</a>
+</li>
+</ul>
+</nav>
+<main>
+<div class=flex-wrapper>
+<div class=post__container>
+<div class=post>
+<header class=post__header>
+<h1 id=post__title>ROX Refine Simulator</h1>
+<time datetime="2021-07-28 15:32:21 +0800 +0800" class=post__date>Jul 28 2021</time>
+</header>
+<article class=post__content>
+<h2 id=summary>Summary<a class=anchor href=#summary>#</a></h2>
+<p>This page contains the refinement simulator for Ragnarok X.
+In this game, refining equipment has a variable chance to upgrade, failed, damage, and even downgrade.
+This simulator helps conduct a controlled experiment on this refinement mechanism,
+producing a report that may or may not be valuable for making refinement decisions inside the game.</p>
+<h2 id=simulator>Simulator<a class=anchor href=#simulator>#</a></h2>
+<h3 id=input-parameters>Input Parameters<a class=anchor href=#input-parameters>#</a></h3>
+<p>To use the simulator, please input the experiment parameters.
+Then click the &ldquo;Run Simulation&rdquo; button.</p>
+<div class=_rox_refine_simulator>
+<div class=input-group>
+<label>Base Level</label>
+<input id=input-base-lv type=number placeholder="base level" value=0>
+</div>
+<div class=input-group>
+<label>Target Level</label>
+<input id=input-target-lv type=number placeholder="target level" value=6>
+</div>
+<div class=input-group>
+<label>Total Experiment</label>
+<input id=input-total-experiment type=number placeholder="total experiment" value=100000>
+</div>
+<div class=input-group>
+<button id=btn-run>Run Simulation</button>
+</div>
+</div>
+<h3 id=simulation-result>Simulation Result<a class=anchor href=#simulation-result>#</a></h3>
+<div class=_rox_refine_simulator>
+<div id=result-placeholder>
+Please run the simulation to view the result.
+</div>
+<div id=result-placeholder-running>
+Running the simulation, please wait...
+</div>
+<div id=result>
+<div>
+<h4>Simulation Report Table</h4>
+<table>
+<tr>
+<td>Base Lv</td>
+<td class=text-base-lv></td>
+</tr>
+<tr>
+<td>Target Lv</td>
+<td class=text-target-lv></td>
+</tr>
+<tr>
+<td>Total Experiment</td>
+<td class=text-n-experiment></td>
+</tr>
+<tr>
+<td>P50 refine times</td>
+<td class=text-p50></td>
+</tr>
+<tr>
+<td>P75 refine times</td>
+<td class=text-p75></td>
+</tr>
+<tr>
+<td>P95 refine times</td>
+<td class=text-p95></td>
+</tr>
+<tr>
+<td>P50 Crystal cost <small>(2h white)</small></td>
+<td class=text-price></td>
+</tr>
+<tr>
+<td>Mode</td>
+<td class=text-mode></td>
+</tr>
+<tr>
+<td>Average</td>
+<td class=text-average></td>
+</tr>
+</table>
+</div>
+<div>
+<h4>Required Refinements Frequency Charts</h4>
+<canvas id=chart-result width=400 height=400></canvas>
+</div>
+<div>
+<h4>How many times should you refine to reach the target level?</h4>
+<p>From the simulation, we can conclude the following statements:</p>
+<ul>
+<li>
+Most of the experiment need <b class=text-mode>X</b> refinements to reach the target level. (see <code>mode</code>)
+</li>
+<li>
+If you are the average guy with normal luck, you can see the <code>p50</code>.
+During the simulation, 50% of the experiment reach the target level after <b class=text-p50>X</b> refinements.
+</li>
+<li>
+If you have a tendency with slightly bad luck, you can see the <code>p75</code>.
+During the simulation, 75% of the experiment reach the target level after <b class=text-p75>X</b> refinements.
+</li>
+<li>
+If you are pessimistic and have super horrible bad luck, you can see the <code>p95</code>.
+During the simulation, 75% of the experiment reach the target level after <b class=text-p95>X</b> refinements.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<style>._rox_refine_simulator{margin-top:20px;margin-bottom:20px}._rox_refine_simulator .input-group{margin-bottom:20px}._rox_refine_simulator label{display:block;font-weight:700;margin-bottom:10px}._rox_refine_simulator input{font-size:20px;border-radius:4px;border:2px solid #333;padding:4px 8px}._rox_refine_simulator button{padding:8px 20px;font-size:20px;border-radius:4px;border:2px solid #333;cursor:pointer}._rox_refine_simulator button:active{background-color:#999}._rox_refine_simulator table{margin-top:20px;margin-bottom:20px}._rox_refine_simulator table td{font-size:14px}._rox_refine_simulator table td:first-child{font-weight:700}#result,#result-placeholder-running{display:none}</style>
+<script src=https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js></script>
+<script src=/rox-refine-simulator/script.js></script>
+</article>
+<div class=pagination>
+</div>
+<footer class=post__footer>
+<div class=social-icons>
+</div>
+<p>© 2021</p>
+</footer>
+</div>
+</div>
+</div>
+</main>
+<script src=/js/index.min.575dda8d49ee02639942c63564273e6da972ab531dda26a08800bdcb477cbd7f.js integrity="sha256-V13ajUnuAmOZQsY1ZCc+balyq1Md2iagiAC9y0d8vX8=" crossorigin=anonymous></script>
+<script src=https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js></script>
+<script src=https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js data-autoloader-path=https://unpkg.com/prismjs@1.20.0/components/></script>
+</body>
+</html>
