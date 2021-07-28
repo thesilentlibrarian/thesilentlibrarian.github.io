@@ -154,7 +154,7 @@ function writeReport(states, options) {
       data: {
         labels: [...data.keys()],
           datasets: [{
-            label: 'Required refinement times',
+            label: 'Frequency',
             data,
             backgroundColor: 'rgba(173, 216, 230, 0.9)',
           }]
