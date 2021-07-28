@@ -1,6 +1,6 @@
 <!doctype html><html lang=en-us>
 <head>
-<title>ROX Refine Simulator | The Silent Librarian</title>
+<title>ROX Repeated Refine Simulator | The Silent Librarian</title>
 <meta charset=utf-8>
 <meta name=language content="en">
 <meta name=description content>
@@ -11,7 +11,7 @@
 <link rel="shortcut icon" type=image/png href=/favicon.ico>
 <link type=text/css rel=stylesheet href=/css/post.min.86d1effd4c412b85ac13db53a90c473a0f256f789b821e131125c9aa25cb6a6d.css integrity="sha256-htHv/UxBK4WsE9tTqQxHOg8lb3ibgh4TESXJqiXLam0=">
 <link type=text/css rel=stylesheet href=/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","url":"https:\/\/thesilentlibrarian.github.io\/rox-refine-simulator\/","name":"ROX Refine Simulator","author":{"@type":"Person","name":""},"description":""}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","url":"https:\/\/thesilentlibrarian.github.io\/rox-refine-simulator\/","name":"ROX Repeated Refine Simulator","author":{"@type":"Person","name":""},"description":""}</script>
 </head>
 <body>
 <div class=burger__container>
@@ -27,7 +27,10 @@
 <a href=/>about</a>
 </li>
 <li>
-<a href=/rox-refine-simulator>rox refine simulator</a>
+<a href=/rox-refine-simulator>rox repeated refine simulator</a>
+</li>
+<li>
+<a href=/rox-refine-step-simulator>rox step refine simulator</a>
 </li>
 </ul>
 </nav>
@@ -36,7 +39,7 @@
 <div class=post__container>
 <div class=post>
 <header class=post__header>
-<h1 id=post__title>ROX Refine Simulator</h1>
+<h1 id=post__title>ROX Repeated Refine Simulator</h1>
 <time datetime="2021-07-28 15:32:21 +0800 +0800" class=post__date>Jul 28 2021</time>
 </header>
 <article class=post__content>
@@ -45,6 +48,7 @@
 In this game, refining equipment has a variable chance to upgrade, failed, damage, and even downgrade.
 This simulator helps conduct a controlled experiment on this refinement mechanism,
 producing a report that may or may not be valuable for making refinement decisions inside the game.</p>
+<p>For step-by-step refinement simulator, click <a href=/rox-refine-step-simulator>here</a>.</p>
 <h2 id=simulator>Simulator<a class=anchor href=#simulator>#</a></h2>
 <h3 id=input-parameters>Input Parameters<a class=anchor href=#input-parameters>#</a></h3>
 <p>To use the simulator, please input the experiment parameters.
@@ -125,9 +129,6 @@ Running the simulation, please wait...
 <p>From the simulation, we can conclude the following statements:</p>
 <ul>
 <li>
-Most of the experiment need <b class=text-mode>X</b> refinements to reach the target level. (see <code>mode</code>)
-</li>
-<li>
 If you are the average guy with normal luck, you can see the <code>p50</code>.
 During the simulation, 50% of the experiment reach the target level after <b class=text-p50>X</b> refinements.
 </li>
@@ -148,6 +149,10 @@ During the simulation, 95% of the experiment reach the target level after <b cla
 <script src=/rox-refine-simulator/script.js></script>
 </article>
 <div class=pagination>
+<a class=pagination__item href=https://thesilentlibrarian.github.io/rox-refine-step-simulator/>
+<span class=pagination__label>Next Post</span>
+<span class=pagination__title>ROX Refine Step Simulator</span>
+</a>
 </div>
 <footer class=post__footer>
 <div class=social-icons>
