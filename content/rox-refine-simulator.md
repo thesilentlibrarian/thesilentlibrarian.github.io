@@ -34,6 +34,14 @@ Then click the "Run Simulation" button.
     <input id="input-total-experiment" type="number" placeholder="total experiment" value="100000">
   </div>
   <div class="input-group">
+    <label>Phracon 1 Price</label>
+    <input id="input-phracon-price" type="number" placeholder="phracon 1 price" value="2000">
+    <div class="input-desc">
+      *Price for Phracon 2 and 3 will be derived. Phracon 2 price is 4x, Phracon 3 is 16x.
+    <div>
+  </div>
+  <br>
+  <div class="input-group">
     <button id="btn-run">Run Simulation</button>
   </div>
 </div>
@@ -162,6 +170,11 @@ Then click the "Run Simulation" button.
 
   ._rox_refine_simulator table td:first-child {
     font-weight: bold;
+  }
+
+  ._rox_refine_simulator .input-desc {
+    font-size: 12px;
+    margin-top: 2px;
   }
 
   #result, #result-placeholder-running {

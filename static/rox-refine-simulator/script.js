@@ -1,7 +1,7 @@
 const PRICE = {
-  MATERIAL1: 2000,   // Phracon 1
-  MATERIAL2: 8000,   // Phracon 2
-  MATERIAL3: 32000,  // Phracon 3
+  MATERIAL1: 1,   // Phracon 1
+  MATERIAL2: 4,   // Phracon 2
+  MATERIAL3: 16,  // Phracon 3
   REPAIR: 50000,     // Weapon Lv50
 }
 
@@ -39,8 +39,8 @@ const REFINEMENT_RATE = [
 
 // refine return the next state
 function refine(state) {
-  const rate = REFINEMENT_RATE[state.currentLv]
-  const cost = REFINEMENT_COST[state.currentLv]
+  const rate = REFINEMENT_RATE[state.currentLv];
+  const cost = REFINEMENT_COST[state.currentLv] * state.materialPrice;
   const n = Math.random();
   if (n < rate.upRate) {
     return {
@@ -63,7 +63,7 @@ function refine(state) {
       ...state,
       nBreak: state.nBreak + 1,
       nRefine: state.nRefine + 1,
-      cost: state.cost + cost + PRICE.REPAIR,
+      cost: state.cost + cost,
     };
   } else {
     return {
@@ -76,7 +76,7 @@ function refine(state) {
 }
 
 // refineUntilLv return the first state reaching targetLv
-function refineUntilLv(currentLv, targetLv) {
+function refineUntilLv(currentLv, targetLv, materialPrice) {
   let state = {
     currentLv,
     nUp: 0,
@@ -85,6 +85,7 @@ function refineUntilLv(currentLv, targetLv) {
     nFailed: 0,
     nRefine: 0,
     cost: 0,
+    materialPrice: materialPrice,
   }
   while (state.currentLv != targetLv) {
     state = refine(state);
@@ -92,10 +93,10 @@ function refineUntilLv(currentLv, targetLv) {
   return state;
 }
 
-function runSimulation(baseLv, targetLv, totalExperiment) {
+function runSimulation(baseLv, targetLv, totalExperiment, materialPrice) {
   const states = [];
   for (let i = 0; i < totalExperiment; i += 1) {
-    const state = refineUntilLv(baseLv, targetLv);
+    const state = refineUntilLv(baseLv, targetLv, materialPrice);
     states.push(state);
   }
   return states;
@@ -137,8 +138,6 @@ function writeReport(states, options) {
 
   const sortedPrice = states.map(s => s.cost).sort((a, b) => a - b);
   const p50price = sortedPrice[Math.floor(sortedPrice.length * 0.50)];
-  console.log(sortedPrice)
-  console.log(p50price)
   setText('text-price', p50price);
 
   setText('text-base-lv', options.baseLv);
@@ -185,18 +184,20 @@ function writeReport(states, options) {
   const inputBaseLv = document.getElementById('input-base-lv');
   const inputTargetLv = document.getElementById('input-target-lv');
   const inputTotalExperiment = document.getElementById('input-total-experiment');
+  const inputMaterialPrice = document.getElementById('input-phracon-price');
   const btnRun = document.getElementById('btn-run');
   
   btnRun.onclick = () => {
     const baseLv = parseInt(inputBaseLv.value);
     const targetLv = parseInt(inputTargetLv.value);
     const totalExperiment = parseInt(inputTotalExperiment.value);
+    const materialPrice = parseInt(inputMaterialPrice.value);
 
     document.getElementById('result-placeholder').style['display'] = 'none';
     document.getElementById('result-placeholder-running').style['display'] = 'block';
 
     setTimeout(() => {
-      const states = runSimulation(baseLv, targetLv, totalExperiment);
+      const states = runSimulation(baseLv, targetLv, totalExperiment, materialPrice);
       writeReport(states, { baseLv, targetLv, totalExperiment });        
     }, 100);
   }
