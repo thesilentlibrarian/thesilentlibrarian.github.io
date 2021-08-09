@@ -72,3 +72,9 @@ googleAnalytics = "G-6MJ5CC2B8Z"
   name = "rox step refine simulator"
   title = "ROX Step Refine Simulator"
   url = "/rox-refine-step-simulator"
+
+[[menu.main]]
+  identifier = "terminal"
+  name = "terminal"
+  title = "Terminal"
+  url = "/terminal"
